@@ -39,3 +39,15 @@ export const fetchUser = () => {
       .catch((error) => dispatch(fetchUserFailure(error.message)));
   };
 };
+//set/post data
+export const sendUserData = () => {
+  return (dispatch) => {
+    axios
+      .post("https://jsonplaceholder.typicode.com/users", {
+        id: 1,
+        name: "abc",
+      })
+      .then((response) => console.log(response.status))
+      .catch((error) => dispatch(fetchUserFailure(error.message)));
+  };
+};
